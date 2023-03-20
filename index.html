@@ -11,12 +11,12 @@
 <body>
 	<h1>Wordle 게임</h1>
 	<p>6회 시도 안에 정확한 단어를 추측하세요.</p>
-	<div class="word-box">
-		<input type="text" maxlength="1" id="guess-input">
-		<input type="text" maxlength="1" id="guess-input">
-		<input type="text" maxlength="1" id="guess-input">
-		<input type="text" maxlength="1" id="guess-input">
-		<input type="text" maxlength="1" id="guess-input">
+	<div class="word-box" id="guess-first">
+		<input type="text" class="guess-input" data-index="1" maxlength="1" id="guess-input-first">
+		<input type="text" class="guess-input" data-index="2" maxlength="1" >
+		<input type="text" class="guess-input" data-index="3" maxlength="1" >
+		<input type="text" class="guess-input" data-index="4" maxlength="1" >
+		<input type="text" class="guess-input" data-index="5" maxlength="1" >
 		<button id="guess-btn">추측</button>
 	</div>
 	<div id="result-box"></div>    
