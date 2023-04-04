@@ -5,20 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/common.css">
-    <script src="./js/common.js"></script>
     <title>Wordle Game</title>
 </head>
 <body>
 	<h1>Wordle 게임</h1>
 	<p>6회 시도 안에 정확한 단어를 추측하세요.</p>
+	<div class="word-box" id="history">
+	</div>
 	<div class="word-box" id="guess-first">
-		<input type="text" class="guess-input" data-index="1" maxlength="1" id="guess-input-first">
-		<input type="text" class="guess-input" data-index="2" maxlength="1" >
-		<input type="text" class="guess-input" data-index="3" maxlength="1" >
-		<input type="text" class="guess-input" data-index="4" maxlength="1" >
-		<input type="text" class="guess-input" data-index="5" maxlength="1" >
+		<input type="text" class="guess-input" data-index="1" maxlength="1" oninput="moveFocus(this.dataset.index)" >
+		<input type="text" class="guess-input" data-index="2" maxlength="1" oninput="moveFocus(this.dataset.index)" >
+		<input type="text" class="guess-input" data-index="3" maxlength="1" oninput="moveFocus(this.dataset.index)" >
+		<input type="text" class="guess-input" data-index="4" maxlength="1" oninput="moveFocus(this.dataset.index)" >
+		<input type="text" class="guess-input" data-index="5" maxlength="1" oninput="moveFocus(this.dataset.index)" >
 		<button id="guess-btn">추측</button>
 	</div>
 	<div id="result-box"></div>    
 </body>
+<script src="./js/common.js"></script>
 </html>
