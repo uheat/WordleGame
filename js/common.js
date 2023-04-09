@@ -10,6 +10,20 @@ const guessBtn = document.querySelector('#guess-btn');
 const historybox = document.querySelector('#history');
 const guessInputs = document.querySelectorAll(`#${questName} input`);
 
+guessInputs.forEach(function(boxOne){
+    let inputIndex = boxOne.dataset.index;
+    boxOne.addEventListener("keyup",function(event){
+        // console.log(boxOne.value)
+        if(!!boxOne.value){
+            // console.log(event.key)
+            boxOne.value = event.key;
+        }
+        if(inputIndex < spellCount){
+            document.querySelector(`input[data-index="${inputIndex*1+1}"]`).focus();
+        }
+    })
+})
+
 guessBtn.addEventListener('click',function(){
 
     checkAnswer();
@@ -26,7 +40,7 @@ function moveFocus(currentNum){
 }
 
 function checkAnswer(){
-    let inputAnswer = getInputAnswer();
+    let inputAnswer = getInputAnswerWord();
     appendAnswer(inputAnswer);
 
     if(inputAnswer == answer){
@@ -36,7 +50,7 @@ function checkAnswer(){
     }
 }
 
-function getInputAnswer(){
+function getInputAnswerWord(){
     
     let guessAnswer = '';
 
