@@ -14,11 +14,13 @@ guessInputs.forEach(function(boxOne){
     let inputIndex = boxOne.dataset.index;
     boxOne.addEventListener("keyup",function(event){
         // console.log(boxOne.value)
+        console.log(inputIndex)
         if(!!boxOne.value){
-            // console.log(event.key)
             boxOne.value = event.key;
         }
-        if(inputIndex < spellCount){
+        if(event.key == 'Backspace' && inputIndex > 1){
+            document.querySelector(`input[data-index="${inputIndex*1-1}"]`).focus();
+        }else if(inputIndex < spellCount){
             document.querySelector(`input[data-index="${inputIndex*1+1}"]`).focus();
         }
     })
